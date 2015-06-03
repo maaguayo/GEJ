@@ -40,32 +40,38 @@ $PAGE->set_title ( get_string ( 'title', 'local_ayudantia' ) );
 $PAGE->set_heading ( get_string ( 'title', 'local_ayudantia' ) );
 $PAGE->navbar->add ( get_string ( 'ayudantia', 'local_ayudantia' ) );
 $PAGE->navbar->add ( 'index', 'reservar.php' );
-?>
-<html>
-<title>Busqueda</title>
-<p>
-<form name="form1" method="post" action= "index.php" id="cdr">
-<h2>Buscar</h2>
-<input name="busca" type="text" id="busqueda">
-<input type="submit" name="submit" value="buscar">
-</p>
-</form>
-</html>
 
-<?php 
-$busca="";
-$busca=$_POST['busca'];
-mysql_connect("localhost","root");
-mysql_select_db("moodle");
-if($busca !=""){
-	$busqueda=mysql_query("select * from mdl_matematica1 where nombre like '%".$busca."%'");
-}
-?>
 
-<?php 
+
+
+
 echo $OUTPUT->header (); // Imprime el header
 echo $OUTPUT->heading ( get_string ( 'title', 'local_ayudantia' ) );
-echo $OUTPUT->footer (); // imprime el footer
+
+
+
+
+
+echo"	<html>
+			<form action='http://localhost/moodle-master/local/ayudantia/index2.php' method='post'>";
+
+echo "
+<input type='submit' value='Subir contenido'>";
+
+
+echo"</form>
+			</html>"
+
+
+
+
+/*<html>
+			<form action="http://localhost/moodle-master/local/ayudantia/index2.php" method="post">
+
+<input type=button value="Subir contenido" >
+</form>
+
+echo $OUTPUT->footer (); // imprime el footer */
 ?>
 
 

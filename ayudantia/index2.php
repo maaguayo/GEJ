@@ -41,26 +41,29 @@ $PAGE->set_heading ( get_string ( 'title', 'local_ayudantia' ) );
 $PAGE->navbar->add ( get_string ( 'ayudantia', 'local_ayudantia' ) );
 $PAGE->navbar->add ( 'index', 'reservar.php' );
 
-$data = $DB->get_records('matematica1');
+
 
 
 
 echo $OUTPUT->header (); // Imprime el header
 echo $OUTPUT->heading ( get_string ( 'title', 'local_ayudantia' ) );
+?>
 
+<FORM METHOD="post" ACTION="url.php">
+Selecciona las unidades:
+<br/>
+<input name="unidad[]" type="checkbox" value="unidad1">unidad1
+<br/>
+<input name="unidad[]" type="checkbox" value="unidad2">unidad2
+<br/>
+<input name="unidad[]" type="checkbox" value="unidad2">unidad3
+<br/>
+<input name="unidad[]" type="checkbox" value="unidad2">unidad4
+<br/>
+<input type=submit value="subir">
+</FORM>
 
+<?php 
 
-
-	foreach($_POST['unidad'] as $unidad){
-			
-		foreach($data as $valor){
-			
-	echo $valor->unidad1."<br>";
-	echo $valor->contenido1."<br>";
-	
-
-			
-	}
-}
 echo $OUTPUT->footer (); // imprime el footer
 ?>
